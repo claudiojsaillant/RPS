@@ -28,12 +28,14 @@ database.ref('/player').on("value", function (snap) {
   if (snap.child("p1").exists()) {
     isPlayer1 = snap.val().p1.isPlayer1;
     p1Choice = snap.val().p1.p1Choice;
+    
   } else {
     $('#desicion').text('Waiting for player1...');
   }
   if (snap.child("p2").exists()) {
     isPlayer2 = snap.val().p2.isPlayer2;
     p2Choice = snap.val().p2.p2Choice;
+  
     $('#row3').show();
   } else if((snap.child("p1").exists())) {
     $('#desicion').text('Waiting for player2...');
@@ -86,6 +88,9 @@ function game(finalchoice) {
       break;
   }
 }
+
+
+
 
 
 
