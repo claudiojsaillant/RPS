@@ -32,6 +32,7 @@ database.ref().on("value", function (snap) {
   if (!snap.child('playerChoice/p1').exists() && snap.child('playerConnection/p2').exists() && !isPlayer1) {
     $('#row3').hide();
     $('#status').text('Waiting for P1');
+    $('#status').append('<img id="loading" src="assets/images/loading.gif" alt="loading icon"></img>')
     $('#row2').show();
   }
 
@@ -76,6 +77,7 @@ $(document).on('click', '.choice', function () {
       p2Choice: $(this).attr('value'),
     })
     $('#status').text('Waiting for P1');
+    $('#status').append('<img id="loading" src="assets/images/loading.gif" alt="loading icon"></img>')
     $('#row2').show();
     $('#row3').hide()
   }
@@ -83,7 +85,8 @@ $(document).on('click', '.choice', function () {
     database.ref('/playerChoice/p1').set({
       p1Choice: $(this).attr('value'),
     })
-    $('#status').text('Waiting for P2');
+    $('#status').text('Waiting for P2 ');
+    $('#status').append('<img id="loading" src="assets/images/loading.gif" alt="loading icon"></img>')
     $('#row2').show();
     $('#row3').hide();
   }

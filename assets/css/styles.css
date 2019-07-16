@@ -49,3 +49,8 @@ button, div {
 #mid {
     font-size: 25px;
 }
+
+#loading{
+    width: 35px;
+    height: 40px;
+}
