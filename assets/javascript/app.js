@@ -52,6 +52,34 @@ database.ref().on("value", function (snap) {
   }
 })
 
+
+$('#messageInput').keypress(function (e) {
+  var myDataRef = database.ref('/chat')
+  if (e.keyCode == 13) {
+    var name = $('#nameInput').val();
+    var text = $('#messageInput').val();
+    //myDataRef.set('User ' + name + ' says ' + text);
+    myDataRef.push({
+      name: name,
+      text: text
+    });
+    $('#messageInput').val('');
+  }
+});
+
+database.ref('/chat').on('child_added', function (snapshot) {
+  var message = snapshot.val();
+  displayChatMessage(message.name, message.text);
+});
+
+function displayChatMessage(name, text) {
+  $('<div/>').text(text).prepend($('<em/>').text(name + ': ')).appendTo($('#topcard'));
+  
+};
+
+
+
+
 $(document).on('click', '.player', function () {
   $('#row1').show()
   $('#row2').show();
