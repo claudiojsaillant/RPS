@@ -129,7 +129,7 @@ function game(finalchoice) {
       p1wins++;
       setTimeout(function () {
         $('#desicion').text('');
-      }, 1000)
+      }, 2000)
       break;
     case 'rp':
     case 'sr':
@@ -137,7 +137,7 @@ function game(finalchoice) {
       $('#desicion').text(winLoss(finalchoice, 'l'));
       setTimeout(function () {
         $('#desicion').text('');
-      }, 1000)
+      }, 2000)
       p2wins++;
       break;
     default:
@@ -145,7 +145,7 @@ function game(finalchoice) {
       $('#desicion').text('Draw!');
       setTimeout(function () {
         $('#desicion').text('');
-      }, 1000)
+      }, 2000)
       break;
   }
   $('#userwins').text(p1wins);
