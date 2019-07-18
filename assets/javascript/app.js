@@ -127,25 +127,27 @@ function game(finalchoice) {
     case 'sp':
       $('#desicion').text(winLoss(finalchoice, 'w'));
       p1wins++;
+      $('<div/>').text('P1 Just Won!').prepend($('<em/>').text('Game: ')).appendTo($('#topcard'));
       setTimeout(function () {
         $('#desicion').text('');
-      }, 2000)
+      }, 1900)
       break;
     case 'rp':
     case 'sr':
     case 'ps':
       $('#desicion').text(winLoss(finalchoice, 'l'));
+      p2wins++;
+      $('<div/>').text('P2 Just Won!').prepend($('<em/>').text('Game: ')).appendTo($('#topcard'));
       setTimeout(function () {
         $('#desicion').text('');
-      }, 2000)
-      p2wins++;
+      }, 1900)
       break;
     default:
       console.log('Draw!');
       $('#desicion').text('Draw!');
       setTimeout(function () {
         $('#desicion').text('');
-      }, 2000)
+      }, 1900)
       break;
   }
   $('#userwins').text(p1wins);

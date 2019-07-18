@@ -54,3 +54,8 @@ button, div {
     width: 35px;
     height: 40px;
 }
+
+#desicion {
+    color: white;
+    font-weight: bold;
+}
